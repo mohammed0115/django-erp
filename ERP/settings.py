@@ -42,12 +42,14 @@ INSTALLED_APPS = [
     'Vendors',
     'Purchases',
     'sales',
-    'Customer',
+    'Customers',
     'Inventory',
     'HR',
     'Accounting',
+    'accounts'
 
 ]
+AUTH_USER_MODEL = 'accounts.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -128,3 +130,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT =BASE_DIR
+STATICFILES_DIRS = (
+  os.path.join(BASE_DIR, 'static/'),
+)

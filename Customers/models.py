@@ -12,11 +12,11 @@ class Customer(models.Model):
     
 
     class Meta:
-        verbose_name = _("Customer")
-        verbose_name_plural = _("Customers")
+        verbose_name = "Customer"
+        verbose_name_plural = "Customers"
 
     def __str__(self):
-        return self.name
+        return self.fname+self.lname
 
     # def get_absolute_url(self):
     #     return reverse("Customer_detail", kwargs={"pk": self.pk})

@@ -1,16 +1,14 @@
 from django.db import models
 from Customers.models import Customer
+from django.utils.translation import ugettext_lazy as _
 # Create your models here.
 class Vendor(Customer):
  
     
 
     class Meta:
-        verbose_name = _("Customer")
-        verbose_name_plural = _("Customers")
-
-    def __str__(self):
-        return self.name
+        verbose_name ="Customer"
+        verbose_name_plural = "Customers"
 
     # def get_absolute_url(self):
     #     return reverse("Vendor_detail", kwargs={"pk": self.pk})

@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 from Products.models import Product
-
+from django.utils.translation import ugettext_lazy as _
 class Inventory(models.Model):
     name = models.CharField("Inventory Name", max_length=50)
     Product =models.ForeignKey(Product, verbose_name="product", on_delete=models.CASCADE)
