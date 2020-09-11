@@ -46,9 +46,12 @@ INSTALLED_APPS = [
     'Inventory',
     'HR',
     'Accounting',
-    'accounts'
+    'accounts',
+    'crispy_forms',
+    'homePage'
 
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 AUTH_USER_MODEL = 'accounts.User'
 
 MIDDLEWARE = [
@@ -66,7 +69,7 @@ ROOT_URLCONF = 'ERP.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [  os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

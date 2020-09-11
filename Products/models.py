@@ -3,7 +3,7 @@ from django.db import models
 
 
 class Category(models.Model):
-    name = models.CharField("category name", max_length=50)
+    name = models.CharField("category name", max_length=50,null=True)
 
     
 
@@ -27,7 +27,7 @@ class Product(models.Model):
     company       = models.CharField("company production", max_length=50)
     product_created = models.DateField("date create", auto_now=False, auto_now_add=False)
     product_end     = models.DateField("End date", auto_now=False, auto_now_add=False)
-    category        = models.ForeignKey("Category", verbose_name="Category type", on_delete=models.CASCADE)
+    # category        = models.ForeignKey("Category", verbose_name="Category type", on_delete=models.CASCADE,null=True)
     class Meta:
         verbose_name = "Product"
         verbose_name_plural ="s"
@@ -35,6 +35,6 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
-    # def get_absolute_url(self):
-    #     return reverse("Product_detail", kwargs={"pk": self.pk})
+    def get_absolute_url(self):
+        return reverse("Product_detail", kwargs={"pk": self.pk})
 
