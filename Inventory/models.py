@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 from Products.models import Product
+from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 class Inventory(models.Model):
     name = models.CharField("Inventory Name", max_length=50)

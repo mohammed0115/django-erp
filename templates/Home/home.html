@@ -1,0 +1,23 @@
+{% extends 'Base/base.html' %}
+
+{% block  navbartitle %}
+                      
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'sale-index' %}">Sales</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'purchase-index' %}">Purchase</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Invertory</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Accounting </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">HR </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">setting</a>
+                    </li>
+{% endblock   %}

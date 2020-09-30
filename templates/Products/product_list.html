@@ -1,65 +1,46 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    
+{% extends 'TableBase/index.html' %}
 
 
+{% block  navbartitle %}
+                      
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'Product-create' %}">Create New product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'sale-index' %}">Sales</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'purchase-index' %}">Purchase</a>
+                      </li>
+{% endblock   %}
+        
+{% block thead %}    
+<th class="cell100 column1 text-justify">Name</th>
+<th class="cell100 column2 text-justify">sale_price</th>
+<th class="cell100 column3 text-justify">p_cost</th>
+<th class="cell100 column4 text-justify">company</th>
+<th class="cell100 column5 text-justify">serial_number</th>
+<th class="cell100 column6 text-justify">delete/update</th>
 
 
+{% endblock %}
 
 
-    
-
-
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">name</th>
-            <th scope="col">sale_price</th>
-            <th scope="col">p_cost</th>
-            <th scope="col">company</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            {%  for i in object_list %}
-           <td>{{i.name}}</td>
-           <td>{{i.sale_price}}</td>
-           <td>{{i.p_cost}}</td>
-           <td>{{i.company}}</td>
-          </tr>
-           {% endfor %}
-        </tbody>
-      </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  </body>
-</html>
+{% block Tbody %}                                
+ {% for object in object_list %} 
+                        
+<tr class="row100 body text-justify">
+    <td class="cell100 column1 text-justify"><a href="{% url 'Product-detail' object.pk %}">{{object.name}}</a></td>
+    <td class="cell100 column2 text-justify">{{object.sale_price}}</td>
+    <td class="cell100 column3 text-justify">{{object.p_cost}}</td>
+    <td class="cell100 column4 text-justify">{{object.company}}</td>
+    <td class="cell100 column5 text-justify">{{object.serial_number}}</td>
+    <td class="cell100 column6 text-justify image-responsive"><td><a href="{% url 'Product-delete' object.pk %}" class="fa fa-trash image-responsive "></a><br>
+   </td><td><a href="{% url 'Product-update' object.pk %}" class="fa fa-pencil-alt image-responsive"></a></td></td>
+</tr>
+{% endfor %}
+{% endblock  %}

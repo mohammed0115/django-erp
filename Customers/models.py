@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 # Create your models here.
 class Customer(models.Model):
     fname   = models.CharField("First name", max_length=50)
@@ -18,5 +18,5 @@ class Customer(models.Model):
     def __str__(self):
         return self.fname+self.lname
 
-    # def get_absolute_url(self):
-    #     return reverse("Customer_detail", kwargs={"pk": self.pk})
+    def get_absolute_url(self):
+        return reverse("Customer_detail", kwargs={"pk": self.pk})

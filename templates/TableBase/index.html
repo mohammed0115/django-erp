@@ -1,0 +1,84 @@
+{% extends 'Base/base.html' %}
+{% block staticFile %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}"/>
+<!--===============================================================================================-->
+
+{% endblock  %}
+
+{% block blockname %} 
+
+    
+            <div class="table100 ver1 m-b-110">
+                <div class="table100-head">
+                    <table>
+                        <thead>
+
+                            <tr class="row100 head">
+                            
+                                {% block thead %}    
+                                <th class="cell100 column1">Class name</th>
+                                <th class="cell100 column2">Type</th>
+                                <th class="cell100 column3">Hours</th>
+                                <th class="cell100 column4">Trainer</th>
+                                <th class="cell100 column5">Spots</th>
+                                {% endblock %}
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+                <div class="table100-body ">
+                    <table>
+                        {% block Tbody %}
+                        <tbody>
+                            
+                         
+                                
+                            
+                            <tr class="row100 body">
+                                <td class="cell100 column1">Like a butterfly</td>
+                                <td class="cell100 column2">Boxing</td>
+                                <td class="cell100 column3">9:00 AM - 11:00 AM</td>
+                                <td class="cell100 column4">Aaron Chapman</td>
+                                <td class="cell100 column5">10</td>
+                            </tr>
+
+                                
+                     
+
+
+                        </tbody>
+
+                        {% endblock  %}
+                    </table>
+                </div>
+            </div>
+{% endblock %}
+
+
+{% block JQuery %}
+  <!--===============================================================================================-->	
+	<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+    <!--===============================================================================================-->
+        <script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+        <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!--===============================================================================================-->
+        <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+    <!--===============================================================================================-->
+        <script src="{% static 'vendor/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
+        <script>
+            $('.js-pscroll').each(function(){
+                var ps = new PerfectScrollbar(this);
+    
+                $(window).on('resize', function(){
+                    ps.update();
+                })
+            });
+                
+            
+        </script>
+    <!--===============================================================================================-->
+    
+{% endblock  %}
