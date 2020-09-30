@@ -30,7 +30,7 @@ class Product(models.Model):
     # category        = models.ForeignKey("Category", verbose_name="Category type", on_delete=models.CASCADE,null=True)
     class Meta:
         verbose_name = "Product"
-        verbose_name_plural ="s"
+        verbose_name_plural ="products"
 
     def __str__(self):
         return self.name

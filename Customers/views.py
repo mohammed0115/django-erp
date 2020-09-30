@@ -14,23 +14,23 @@ from .models import Customer
 # from Products.forms import ProductForm
 
 
-class ProductCreate(CreateView):
+class CustomerCreate(CreateView):
     model = Customer
     fields=['nationalno','fname','minName','lname','email','phone']
     success_url = reverse_lazy('customer-list')
   
-class ProductUpdate(UpdateView):
+class CustomerUpdate(UpdateView):
     model = Customer
     fields=['nationalno','fname','minName','lname','email','phone']
     success_url = reverse_lazy('customer-list')
 
-class ProductDelete(DeleteView):
+class CustomerDelete(DeleteView):
     # form_class = ProductForm
     model= Customer
     success_url = reverse_lazy('customer-list')
     
-class ProductDetailView(DetailView):
+class CustomerDetailView(DetailView):
     model= Customer
     
-class ProductListView(ListView):
+class CustomerListView(ListView):
     queryset= Customer.objects.all()

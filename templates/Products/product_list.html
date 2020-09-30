@@ -39,7 +39,7 @@
     <td class="cell100 column3 text-justify">{{object.p_cost}}</td>
     <td class="cell100 column4 text-justify">{{object.company}}</td>
     <td class="cell100 column5 text-justify">{{object.serial_number}}</td>
-    <td class="cell100 column6 text-justify image-responsive"><td><a href="{% url 'Product-delete' object.pk %}" class="fa fa-trash image-responsive "></a><br>
+    <td class="cell100 column6 text-justify image-responsive"><td><a href="{% url 'Product-delete' object.pk %}" class="fa fa-trash image-responsive "></a>
    </td><td><a href="{% url 'Product-update' object.pk %}" class="fa fa-pencil-alt image-responsive"></a></td></td>
 </tr>
 {% endfor %}

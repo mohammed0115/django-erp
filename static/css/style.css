@@ -9,6 +9,10 @@ background-color: rgb(175, 136, 187);
 
 
 }
+tr td{
+text-align: left;
+
+}
 nav{
 
 	margin-left: 75.5px;

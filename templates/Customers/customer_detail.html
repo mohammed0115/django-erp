@@ -1,0 +1,40 @@
+
+{% extends 'TableBase/index.html' %}
+
+
+{% block  navbartitle %}
+                      
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'customer-create' %}">Create New Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'sale-index' %}">Sales</a>
+                      </li>
+                      
+{% endblock   %}
+        
+{% block thead %}    
+<th class="cell100 column1 text-justify">Full name</th>
+<th class="cell100 column2 text-justify">email</th>
+<th class="cell100 column3 text-justify">phone<th>
+<th class="cell100 column4 text-justify">nationalno</th>
+<th class="cell100 column5 text-justify">Delete/Update</th>
+{% endblock %}
+
+
+{% block Tbody %}                                
+  
+                        
+<tr class="row100 body text-justify">
+    <td class="cell100 column1 text-justify "><a href="{% url 'customer-detail' object.pk %}">{{object}}</a></td>
+    <td class="cell100 column2 text-justify">{{object.email}}</td>
+    <td class="cell100 column3 text-justify">{{object.phone}}</td>
+    <td class="cell100 column4 text-justify">{{object.nationalno}}</td>
+    <td class="cell100 column5 text-justify image-responsive"><td><a href="{% url 'customer-delete' object.pk %}" class="fa fa-trash image-responsive "></a>
+    </td><td><a href="{% url 'customer-update' object.pk %}" class="fa fa-pencil-alt image-responsive"></a></td></td>
+ </tr>
+
+{% endblock  %}

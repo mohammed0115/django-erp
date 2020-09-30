@@ -3,6 +3,7 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
 <!--===============================================================================================-->
 
 {% endblock  %}
@@ -12,10 +13,10 @@
     
             <div class="table100 ver1 m-b-110">
                 <div class="table100-head">
-                    <table>
+                    <table >
                         <thead>
 
-                            <tr class="row100 head">
+                            <tr class="row100 head text-justify">
                             
                                 {% block thead %}    
                                 <th class="cell100 column1">Class name</th>
@@ -30,7 +31,7 @@
                 </div>
 
                 <div class="table100-body ">
-                    <table>
+                    <table >
                         {% block Tbody %}
                         <tbody>
                             
